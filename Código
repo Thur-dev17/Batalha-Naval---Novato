@@ -1,0 +1,42 @@
+#include <stdio.h>
+
+int main() {
+    // Definindo o tabuleiro (10x10 por exemplo)
+    int tabuleiro[10][10] = {0};
+
+    // Definição dos navios
+    // Navio horizontal (linha 2, da coluna 1 até 4)
+    int navioHorizontal[4][2] = {
+        {2, 1},
+        {2, 2},
+        {2, 3},
+        {2, 4}
+    };
+
+    // Navio vertical (coluna 6, da linha 4 até 7)
+    int navioVertical[4][2] = {
+        {4, 6},
+        {5, 6},
+        {6, 6},
+        {7, 6}
+    };
+
+    // Marcar os navios no tabuleiro
+    for (int i = 0; i < 4; i++) {
+        tabuleiro[navioHorizontal[i][0]][navioHorizontal[i][1]] = 1;
+        tabuleiro[navioVertical[i][0]][navioVertical[i][1]] = 2;
+    }
+
+    // Exibir as coordenadas dos navios
+    printf("Coordenadas do Navio Horizontal:\n");
+    for (int i = 0; i < 4; i++) {
+        printf("(%d, %d)\n", navioHorizontal[i][0], navioHorizontal[i][1]);
+    }
+
+    printf("\nCoordenadas do Navio Vertical:\n");
+    for (int i = 0; i < 4; i++) {
+        printf("(%d, %d)\n", navioVertical[i][0], navioVertical[i][1]);
+    }
+
+    return 0;
+}
